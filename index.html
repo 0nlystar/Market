@@ -13,126 +13,37 @@
             --primary: #2563eb;
             --secondary: #64748b;
             --success: #10b981;
+            --danger: #ef4444;
             --bg-light: #f8fafc;
             --border: #e2e8f0;
         }
 
-        body {
-            background-color: var(--bg-light);
-            font-family: 'Sarabun', sans-serif;
-            color: #1e293b;
-            margin: 0;
-            padding-bottom: 80px;
-        }
-
-        .app-header {
-            background: white;
-            padding: 18px;
-            text-align: center;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .card-custom {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-
+        body { background-color: var(--bg-light); font-family: 'Sarabun', sans-serif; color: #1e293b; margin: 0; padding-bottom: 80px; }
+        .app-header { background: white; padding: 18px; text-align: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+        .card-custom { background: white; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); padding: 20px; margin-bottom: 16px; }
         .form-label { font-weight: 600; font-size: 0.9rem; color: var(--secondary); margin-bottom: 8px; }
-        .form-control, .form-select {
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 12px 16px;
-            font-size: 1rem;
-        }
-        .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
-
-        .btn-main {
-            background: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            padding: 15px;
-            font-weight: 600;
-            width: 100%;
-            transition: all 0.2s;
-        }
+        .form-control, .form-select { border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; }
+        .btn-main { background: var(--primary); color: white; border: none; border-radius: 12px; padding: 15px; font-weight: 600; width: 100%; transition: all 0.2s; }
         .btn-main:active { transform: scale(0.98); }
-
-        .search-area {
-            position: sticky;
-            top: 65px;
-            background: var(--bg-light);
-            padding: 10px 0;
-            z-index: 900;
-        }
-        .filter-scroll {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding: 10px 0;
-            scrollbar-width: none;
-        }
-        .filter-scroll::-webkit-scrollbar { display: none; }
-        
-        .pill {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 6px 18px;
-            font-size: 0.85rem;
-            white-space: nowrap;
-            color: var(--secondary);
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .pill.active { background: var(--primary); color: white; border-color: var(--primary); font-weight: 600; }
-
-        .cat-title {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 20px 0 10px 5px;
-        }
-        .product-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 0;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        .product-item:last-child { border-bottom: none; }
+        .search-area { position: sticky; top: 65px; background: var(--bg-light); padding: 10px 0; z-index: 900; }
+        .filter-scroll { display: flex; gap: 8px; overflow-x: auto; padding: 10px 0; scrollbar-width: none; }
+        .pill { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 6px 18px; font-size: 0.85rem; color: var(--secondary); cursor: pointer; white-space: nowrap; }
+        .pill.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .cat-title { font-size: 0.8rem; font-weight: 700; color: var(--secondary); margin: 20px 0 10px 5px; }
+        .product-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #f1f5f9; }
         .p-name { font-weight: 500; font-size: 1rem; }
+        .price-group { display: flex; align-items: center; gap: 10px; }
         .p-price { font-weight: 700; font-size: 1.1rem; color: var(--success); }
-
-        .nav-bottom {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: white;
-            display: flex;
-            padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
-            border-top: 1px solid var(--border);
-            z-index: 1001;
-        }
-        .nav-btn {
-            background: none; border: none; flex: 1;
-            color: var(--secondary); font-size: 0.75rem; font-weight: 500;
-        }
-        .nav-btn i { font-size: 1.6rem; display: block; margin-bottom: 2px; }
+        .btn-action { background: none; border: none; color: var(--secondary); font-size: 1.3rem; padding: 4px; cursor: pointer; }
+        .btn-delete:hover { color: var(--danger); }
+        .nav-bottom { position: fixed; bottom: 0; width: 100%; background: white; display: flex; padding: 10px 0 calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid var(--border); z-index: 1001; }
+        .nav-btn { background: none; border: none; flex: 1; color: var(--secondary); font-size: 0.75rem; }
+        .nav-btn i { font-size: 1.6rem; display: block; }
         .nav-btn.active { color: var(--primary); }
-
         .page { display: none; padding: 15px; }
         .page.active { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .modal-content { border-radius: 20px; border: none; }
     </style>
 </head>
 <body>
@@ -155,7 +66,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">ชื่อรายการสินค้า</label>
-                <input type="text" id="itemName" class="form-control" placeholder="เช่น น้ำปลา, สบู่...">
+                <input type="text" id="itemName" class="form-control" placeholder="ชื่อสินค้า">
             </div>
             <div class="mb-4">
                 <label class="form-label">ราคา (บาท)</label>
@@ -167,9 +78,7 @@
 
     <div id="list-page" class="page">
         <div class="search-area">
-            <input type="text" id="searchInput" class="form-control shadow-sm" 
-                   placeholder="🔍 ค้นหา (เช่น เม...)" oninput="handleSearch()">
-            
+            <input type="text" id="searchInput" class="form-control shadow-sm" placeholder="🔍 ค้นหาชื่อสินค้า..." oninput="handleSearch()">
             <div class="filter-scroll" id="filterBar">
                 <div class="pill active" onclick="setFilter('ทั้งหมด', this)">ทั้งหมด</div>
                 <div class="pill" onclick="setFilter('เครื่องปรุง', this)">เครื่องปรุง</div>
@@ -178,30 +87,96 @@
                 <div class="pill" onclick="setFilter('สุรา', this)">สุรา</div>
             </div>
         </div>
-
         <div id="displayArea"></div>
     </div>
 
+    <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered p-3">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-0">
+                    <h6 class="modal-title fw-bold">✏️ แก้ไขข้อมูล</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <input type="hidden" id="editIndex">
+                    <div class="mb-3">
+                        <label class="form-label">หมวดหมู่</label>
+                        <select id="editCategory" class="form-select">
+                            <option value="เครื่องปรุง">เครื่องปรุง</option>
+                            <option value="ของใช้">ของใช้</option>
+                            <option value="น้ำดื่ม">น้ำดื่ม</option>
+                            <option value="สุรา">สุรา</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ชื่อรายการสินค้า</label>
+                        <input type="text" id="editName" class="form-control">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">ราคา (บาท)</label>
+                        <input type="number" id="editPrice" class="form-control" inputmode="decimal">
+                    </div>
+                    <button onclick="saveEditData()" class="btn-main" id="saveEditBtn">อัปเดตข้อมูล</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered p-4">
+            <div class="modal-content text-center">
+                <div class="modal-body p-4">
+                    <div class="mb-3"><i class='bx bx-trash text-danger' style="font-size: 4rem;"></i></div>
+                    <h5 class="fw-bold">ยืนยันการลบ?</h5>
+                    <p class="text-secondary">คุณต้องการลบรายการนี้ใช่หรือไม่ ข้อมูลจะหายไปจากระบบทันที</p>
+                    <input type="hidden" id="deleteIndex">
+                    <div class="d-flex gap-2 mt-4">
+                        <button class="btn btn-danger w-100 py-3 rounded-3 fw-bold" onclick="confirmDelete()">ลบเลย</button>
+                        <button class="btn btn-light w-100 py-3 rounded-3" data-bs-dismiss="modal">ยกเลิก</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="statusModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered p-4">
+            <div class="modal-content text-center">
+                <div class="modal-body p-4">
+                    <div id="statusIcon" class="mb-3"></div>
+                    <h5 id="statusTitle" class="fw-bold"></h5>
+                    <button class="btn btn-primary w-100 mt-3 py-2 rounded-3" data-bs-dismiss="modal">ตกลง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <nav class="nav-bottom">
-        <button class="nav-btn active" id="btn-add" onclick="switchPage('add')">
-            <i class='bx bx-plus-circle'></i><span>เพิ่มข้อมูล</span>
-        </button>
-        <button class="nav-btn" id="btn-list" onclick="switchPage('list')">
-            <i class='bx bx-list-ul'></i><span>รายการ</span>
-        </button>
+        <button class="nav-btn active" id="btn-add" onclick="switchPage('add')"><i class='bx bx-plus-circle'></i><span>เพิ่ม</span></button>
+        <button class="nav-btn" id="btn-list" onclick="switchPage('list')"><i class='bx bx-list-ul'></i><span>รายการ</span></button>
     </nav>
 
-    <script>
-        // *** แก้ไข: ใส่ URL Web App ของคุณตรงนี้ ***
-        const scriptUrl = 'https://script.google.com/macros/s/AKfycby5YEYiUKHrNp3PVeK5s_E9Fp6AS5uN5NIVK7Df4Y5acRirUHHaFDC1S73eDkDuTME2/exec'; 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        let rawData = [];
-        let activeCategory = 'ทั้งหมด';
+    <script>
+        const scriptUrl = 'https://script.google.com/macros/s/AKfycbxKVu63kK-S02LDJQsV4OfsV0WMTlPCYrqfjfIv8cpqEI428GLcMYIxLy4RdQzzMeq7/exec'; 
+        let rawData = [], activeCategory = 'ทั้งหมด', myEditModal, myDeleteModal, myStatusModal;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            myEditModal = new bootstrap.Modal(document.getElementById('editModal'));
+            myDeleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            myStatusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+        });
+
+        function showStatus(title, isSuccess = true) {
+            const icon = isSuccess ? `<i class='bx bx-check-circle text-success' style="font-size: 4rem;"></i>` : `<i class='bx bx-error-circle text-danger' style="font-size: 4rem;"></i>`;
+            document.getElementById('statusIcon').innerHTML = icon;
+            document.getElementById('statusTitle').innerText = title;
+            myStatusModal.show();
+        }
 
         function switchPage(page) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            
+            document.querySelectorAll('.page, .nav-btn').forEach(el => el.classList.remove('active'));
             if(page === 'add') {
                 document.getElementById('add-page').classList.add('active');
                 document.getElementById('btn-add').classList.add('active');
@@ -212,69 +187,34 @@
             }
         }
 
-        function setFilter(cat, el) {
-            document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-            el.classList.add('active');
-            activeCategory = cat;
-            handleSearch();
-        }
-
-        // แก้ไข: เปลี่ยนมาใช้ fetch POST แทน google.script.run
         async function saveData() {
             const name = document.getElementById('itemName').value.trim();
             const price = document.getElementById('itemPrice').value;
             const cat = document.getElementById('category').value;
-
-            if(!name || !price) return alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+            if(!name || !price) return showStatus("กรุณากรอกข้อมูลให้ครบ", false);
 
             const btn = document.getElementById('saveBtn');
             btn.disabled = true; btn.innerText = "กำลังบันทึก...";
 
             try {
-                const response = await fetch(scriptUrl, {
-                    method: 'POST',
-                    mode: 'no-cors', // สำคัญสำหรับ Apps Script
-                    cache: 'no-cache',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ category: cat, name: name, price: price })
+                await fetch(scriptUrl, {
+                    method: 'POST', mode: 'no-cors',
+                    body: JSON.stringify({ action: 'add', category: cat, name: name, price: price })
                 });
-
-                alert("บันทึกสำเร็จ! (ข้อมูลกำลังเดินทางไปยัง Sheets)");
-                document.getElementById('itemName').value = '';
-                document.getElementById('itemPrice').value = '';
-            } catch (error) {
-                console.error(error);
-                alert("เกิดข้อผิดพลาดในการเชื่อมต่อ");
-            } finally {
-                btn.disabled = false; btn.innerText = "บันทึกข้อมูลสินค้า";
-            }
+                showStatus("บันทึกข้อมูลสำเร็จ!");
+                document.getElementById('itemName').value = ''; document.getElementById('itemPrice').value = '';
+            } catch (e) { showStatus("เกิดข้อผิดพลาด", false); } 
+            finally { btn.disabled = false; btn.innerText = "บันทึกข้อมูลสินค้า"; }
         }
 
-        // แก้ไข: เปลี่ยนมาใช้ fetch GET แทน google.script.run
         async function fetchData() {
-            document.getElementById('displayArea').innerHTML = '<p class="text-center mt-5 text-muted">กำลังโหลดข้อมูล...</p>';
+            document.getElementById('displayArea').innerHTML = '<p class="text-center mt-5 text-muted">กำลังโหลด...</p>';
             try {
-                const response = await fetch(scriptUrl);
-                rawData = await response.json();
+                const res = await fetch(scriptUrl);
+                const data = await res.json();
+                rawData = data.map((it, idx) => ({ ...it, originalIndex: idx }));
                 renderItems(rawData);
-            } catch (error) {
-                console.error(error);
-                document.getElementById('displayArea').innerHTML = '<p class="text-center mt-5 text-danger">ไม่สามารถโหลดข้อมูลจาก Server ได้</p>';
-            }
-        }
-
-        function handleSearch() {
-            const query = document.getElementById('searchInput').value.toLowerCase().trim();
-            
-            const filtered = rawData.filter(item => {
-                const name = item[1].toString().toLowerCase();
-                const cat = item[0];
-                const matchCat = (activeCategory === 'ทั้งหมด' || cat === activeCategory);
-                const matchSearch = name.startsWith(query);
-                return matchCat && matchSearch;
-            });
-
-            renderItems(filtered);
+            } catch (e) { document.getElementById('displayArea').innerHTML = '<p class="text-center mt-5 text-danger">โหลดไม่สำเร็จ</p>'; }
         }
 
         function renderItems(data) {
@@ -284,26 +224,107 @@
 
             cats.forEach(c => {
                 if(activeCategory !== 'ทั้งหมด' && c !== activeCategory) return;
-                
                 const items = data.filter(d => d[0] === c);
                 if(items.length > 0) {
                     found = true;
-                    html += `<div class="cat-title">${c}</div>`;
-                    html += `<div class="card-custom" style="padding-top:5px; padding-bottom:5px;">`;
+                    html += `<div class="cat-title">${c}</div><div class="card-custom py-1">`;
                     items.forEach(it => {
                         html += `
                             <div class="product-item">
                                 <div class="p-name">${it[1]}</div>
-                                <div class="p-price">${Number(it[2]).toLocaleString()} <span style="font-size:0.7rem; font-weight:400;">฿</span></div>
-                            </div>
-                        `;
+                                <div class="price-group">
+                                    <div class="p-price">${Number(it[2]).toLocaleString()} ฿</div>
+                                    <button class="btn-action text-primary" onclick="openEditModal(${it.originalIndex})"><i class='bx bx-edit-alt'></i></button>
+                                    <button class="btn-action text-danger btn-delete" onclick="openDeleteModal(${it.originalIndex})"><i class='bx bx-trash'></i></button>
+                                </div>
+                            </div>`;
                     });
                     html += `</div>`;
                 }
             });
+            document.getElementById('displayArea').innerHTML = found ? html : '<div class="text-center mt-5 text-muted">ไม่พบข้อมูล</div>';
+        }
 
-            if(!found) html = '<div class="text-center mt-5 text-muted">ไม่พบข้อมูลที่ค้นหา</div>';
-            document.getElementById('displayArea').innerHTML = html;
+        function openEditModal(index) {
+            const it = rawData.find(d => d.originalIndex === index);
+            document.getElementById('editIndex').value = index;
+            document.getElementById('editCategory').value = it[0];
+            document.getElementById('editName').value = it[1];
+            document.getElementById('editPrice').value = it[2];
+            myEditModal.show();
+        }
+
+        async function saveEditData() {
+            const btn = document.getElementById('saveEditBtn');
+            btn.disabled = true;
+            try {
+                await fetch(scriptUrl, {
+                    method: 'POST', mode: 'no-cors',
+                    body: JSON.stringify({ 
+                        action: 'edit', rowIndex: parseInt(document.getElementById('editIndex').value),
+                        category: document.getElementById('editCategory').value,
+                        name: document.getElementById('editName').value,
+                        price: document.getElementById('editPrice').value
+                    })
+                });
+                myEditModal.hide();
+                showStatus("อัปเดตเรียบร้อย");
+                fetchData();
+            } catch (e) { showStatus("อัปเดตล้มเหลว", false); }
+            finally { btn.disabled = false; }
+        }
+
+        function openDeleteModal(index) {
+            document.getElementById('deleteIndex').value = index;
+            myDeleteModal.show();
+        }
+
+        // แก้ไข: ฟังก์ชันลบแบบ Optimistic UI (เร็วที่สุด)
+        async function confirmDelete() {
+            const indexToDelete = parseInt(document.getElementById('deleteIndex').value);
+            myDeleteModal.hide();
+
+            // 1. สำรองข้อมูลชุดปัจจุบันไว้ (Rollback backup)
+            const backupData = [...rawData]; 
+            
+            // 2. อัปเดตหน้าจอทันที (Local State Manipulation)
+            // ลบรายการออกจากตัวแปรในเครื่อง และสั่ง Render ใหม่ทันที
+            rawData = rawData.filter(it => it.originalIndex !== indexToDelete);
+            renderItems(rawData);
+
+            try {
+                // 3. ส่งคำสั่งลบไปที่ Server เบื้องหลัง (Background Sync)
+                await fetch(scriptUrl, {
+                    method: 'POST', 
+                    mode: 'no-cors',
+                    body: JSON.stringify({ action: 'delete', rowIndex: indexToDelete })
+                });
+                
+                // แจ้งเตือนสั้นๆ (ทางเลือก)
+                console.log("Deleted from server successfully");
+                
+            } catch (e) { 
+                // 4. กรณี Error (เช่น เน็ตหลุด) ให้กู้คืนข้อมูลกลับมาบนหน้าจอ
+                rawData = backupData;
+                renderItems(rawData);
+                showStatus("ลบไม่สำเร็จ กรุณาตรวจสอบการเชื่อมต่อ", false); 
+            }
+        }
+
+        function handleSearch() {
+            const q = document.getElementById('searchInput').value.toLowerCase().trim();
+            const filtered = rawData.filter(it => {
+                const matchCat = (activeCategory === 'ทั้งหมด' || it[0] === activeCategory);
+                return matchCat && it[1].toString().toLowerCase().includes(q);
+            });
+            renderItems(filtered);
+        }
+
+        function setFilter(cat, el) {
+            document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+            activeCategory = cat;
+            handleSearch();
         }
     </script>
 </body>
